@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2019 at 11:42 PM
+-- Generation Time: Apr 09, 2019 at 01:46 AM
 -- Server version: 5.7.25-0ubuntu0.16.04.2
 -- PHP Version: 7.0.33-0ubuntu0.16.04.3
 
@@ -29,22 +29,23 @@ SET time_zone = "+00:00";
 CREATE TABLE `husbands` (
   `id` int(11) NOT NULL,
   `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL
+  `lastname` varchar(30) NOT NULL,
+  `wife` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `husbands`
 --
 
-INSERT INTO `husbands` (`id`, `firstname`, `lastname`) VALUES
-(1, 'Barack', 'Obama'),
-(2, 'Bill', 'Clinton'),
-(3, 'Seal', 'NoLastName'),
-(4, 'Arnold', 'Schwarzenegger'),
-(5, 'Kermit', 'The Frog'),
-(6, 'Brad', 'Pitt'),
-(7, 'Angelina', 'Jolie'),
-(8, 'Heidi', 'Klum');
+INSERT INTO `husbands` (`id`, `firstname`, `lastname`, `wife`) VALUES
+(1, 'Barack', 'Obama', 1),
+(2, 'Bill', 'Clinton', 4),
+(3, 'Seal', 'NoLastName', 5),
+(4, 'Arnold', 'Schwarzenegger', 3),
+(5, 'Kermit', 'The Frog', 2),
+(6, 'Brad', 'Pitt', 6),
+(9, 'Roberto', 'Espinosa', NULL),
+(10, 'Dylan', 'Rivero', NULL);
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,11 @@ INSERT INTO `wives` (`id`, `firstname`, `lastname`) VALUES
 (1, 'Michelle', 'Obama'),
 (2, 'Miss', 'Piggy'),
 (3, 'Maria', 'Schriver'),
-(4, 'Hillary', 'Clinton');
+(4, 'Hillary', 'Clinton'),
+(5, 'Heidi', 'Klum'),
+(6, 'Angelina', 'Jolie'),
+(7, 'Scarlett', 'Johannson'),
+(8, 'Meagan', 'Fox');
 
 --
 -- Indexes for dumped tables
@@ -92,12 +97,12 @@ ALTER TABLE `wives`
 -- AUTO_INCREMENT for table `husbands`
 --
 ALTER TABLE `husbands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `wives`
 --
 ALTER TABLE `wives`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
